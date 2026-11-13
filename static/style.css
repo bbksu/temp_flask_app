@@ -1,0 +1,140 @@
+
+/* General page styling */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #26374a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+}
+
+/* Form styling */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inline-form {
+    display: inline-flex;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button {
+    padding: 12px;
+    background: #26374a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #405c78;
+}
+
+/* Profile styling */
+
+.profile-card {
+    padding: 20px;
+    background: #f4f6f9;
+    border-radius: 8px;
+}
+
+/* Table styling */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Validation and notifications */
+
+.error {
+    color: #c62828;
+    font-size: 14px;
+}
+
+.message {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.success {
+    background: #e1f5e1;
+    color: #216b21;
+}
+
+.message.error {
+    background: #fde2e2;
+    color: #a00000;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+}
+
+/* Responsive layout */
+
+@media (max-width: 600px) {
+
+    main {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}

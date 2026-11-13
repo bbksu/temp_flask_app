@@ -1,0 +1,68 @@
+
+{% extends "base.html" %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+
+<h2>Edit Profile</h2>
+
+<form method="POST" action="{{ url_for('edit_profile') }}">
+
+    <input type="hidden" name="csrf_token"
+           value="{{ csrf_token() }}">
+
+    <label>Full Name</label>
+
+    <input type="text"
+           name="full_name"
+           value="{{ user.full_name }}"
+           required>
+
+    {% if errors.get('full_name') %}
+        <p class="error">{{ errors.full_name }}</p>
+    {% endif %}
+
+
+    <label>Email Address</label>
+
+    <input type="email"
+           name="email"
+           value="{{ user.email }}"
+           required>
+
+    {% if errors.get('email') %}
+        <p class="error">{{ errors.email }}</p>
+    {% endif %}
+
+
+    <label>Phone Number</label>
+
+    <input type="tel"
+           name="phone"
+           value="{{ user.phone }}"
+           required>
+
+    {% if errors.get('phone') %}
+        <p class="error">{{ errors.phone }}</p>
+    {% endif %}
+
+
+    <label>Date of Birth</label>
+
+    <input type="date"
+           name="date_of_birth"
+           value="{{ user.date_of_birth }}">
+
+    {% if errors.get('date_of_birth') %}
+        <p class="error">{{ errors.date_of_birth }}</p>
+    {% endif %}
+
+
+    <button type="submit">Save Changes</button>
+
+    <a href="{{ url_for('profile') }}">Cancel</a>
+
+</form>
+
+{% endblock %}

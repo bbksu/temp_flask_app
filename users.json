@@ -1,0 +1,12 @@
+{
+    "users": [
+        {
+            "id": "e6d5493a-424d-46e9-8c7e-ec13bf7b4997",
+            "full_name": "hello",
+            "email": "hello@mail.com",
+            "phone": "082822654912",
+            "date_of_birth": "1996-02-01",
+            "password_hash": "scrypt:32768:8:1$djzEUfwpX0H18WY9$b4c8ca5f7bdf1a88c60ceddd4b28adcff9ee98608d1e85d9dc2ea7ed4f4c8d41c7efad30a9a43553754239f3c8db47e90cc11e9b7315625bddc3603a37ec0567"
+        }
+    ]
+}

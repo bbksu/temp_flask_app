@@ -1,0 +1,42 @@
+
+{% extends "base.html" %}
+
+{% block title %}Registered Users{% endblock %}
+
+{% block content %}
+
+<h2>Registered Users</h2>
+
+{% if users %}
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Full Name</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for user in users %}
+
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.full_name }}</td>
+                </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+{% else %}
+
+    <p>No registered users found.</p>
+
+{% endif %}
+
+{% endblock %}

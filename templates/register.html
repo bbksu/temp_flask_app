@@ -1,0 +1,82 @@
+
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+<h2>Create an Account</h2>
+
+<form action="{{ url_for('register') }}" method="POST">
+
+    <input type="hidden" name="csrf_token"
+           value="{{ csrf_token() }}">
+
+    <label>Full Name</label>
+
+    <input type="text"
+           name="full_name"
+           value="{{ form_data.get('full_name', '') if form_data else '' }}"
+           required>
+
+    {% if errors.get('full_name') %}
+        <p class="error">{{ errors.full_name }}</p>
+    {% endif %}
+
+
+    <label>Email Address</label>
+
+    <input type="email"
+           name="email"
+           value="{{ form_data.get('email', '') if form_data else '' }}"
+           required>
+
+    {% if errors.get('email') %}
+        <p class="error">{{ errors.email }}</p>
+    {% endif %}
+
+
+    <label>Phone Number</label>
+
+    <input type="tel"
+           name="phone"
+           value="{{ form_data.get('phone', '') if form_data else '' }}"
+           required>
+
+    {% if errors.get('phone') %}
+        <p class="error">{{ errors.phone }}</p>
+    {% endif %}
+
+
+    <label>Date of Birth</label>
+
+    <input type="date"
+           name="date_of_birth"
+           value="{{ form_data.get('date_of_birth', '') if form_data else '' }}">
+
+    {% if errors.get('date_of_birth') %}
+        <p class="error">{{ errors.date_of_birth }}</p>
+    {% endif %}
+
+
+    <label>Password</label>
+
+    <input type="password"
+           name="password"
+           minlength="12"
+           required>
+
+    {% if errors.get('password') %}
+        <p class="error">{{ errors.password }}</p>
+    {% endif %}
+
+
+    <button type="submit">Register</button>
+
+</form>
+
+<p>Already registered?
+    <a href="{{ url_for('login') }}">Log in</a>
+</p>
+
+{% endblock %}
